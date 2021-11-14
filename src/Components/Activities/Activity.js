@@ -9,8 +9,11 @@ const Activity = ({name, id}) => {
     const navigate = useNavigate();
 
     const getActivityInfo = () => {
-        navigate('/activityInfo', { state: { name: name, id: id } });
 
+        //send user to activity info page
+        //passing the activity name and ID
+        navigate('/activityInfo', { state: { name: name, id: id } });
+        
     }
 
     return (

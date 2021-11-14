@@ -4,14 +4,10 @@ import { Text, ButtonGroup, Button, IconButton, Spacer, Link } from '@chakra-ui/
 import { FaCamera } from 'react-icons/fa'
 
 const Webcam = ({ id, status, title, url, fullName }) => {
-
-    console.log(fullName);
-
     return (
         <div>
             <HStack>
-                <Text fontWeight='bold' >{title}</Text>
-                <Text> - {fullName}</Text>                
+                <Text fontWeight='bold' >{title}</Text>               
                 <Spacer />
                 <ButtonGroup size="sm" isAttached variant="outline">
                     <Button mr="-px"> {(status === 'Active') ? "Active" : "Inactive"} </Button>

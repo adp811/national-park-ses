@@ -5,7 +5,9 @@ import BlogPost from '../Components/Blog/BlogPost'
 
 const Blog = () => {
 
-    const data = [ //will plan to use mongoDB + Express Server in the future to store + retrieve data
+    //local blog data
+    //will plan to use mongoDB + Express Server in the future to store + retrieve data
+    const data = [ 
         {
           title: "Yellowstone National Park",
           url: "https://images.unsplash.com/photo-1570470276043-874a41ad9b40?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8eWVsbG93c3RvbmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60",
@@ -38,18 +40,21 @@ const Blog = () => {
         },
     ];
 
+    //store the state of blog posts and input forms
     const [title, setTitle] = React.useState("");
     const [url, setUrl] = React.useState("");
     const [description, setDescription] = React.useState("");
     const [blogPosts, setBlogPosts] = React.useState(data);
 
+    //handle changes in the input forms
     const handleTitleChange = (event) => setTitle(event.target.value);
     const handleUrlChange = (event) => setUrl(event.target.value);
     const handleDescriptionChange = (event) => setDescription(event.target.value);
 
+    //handle the submission of a new blog post
     const handleSubmit = () => {
 
-        if (title === '' || url === '' || description === '') {
+        if (title === '' || url === '' || description === '') { //check for invalid input
             alert("Please fill in all the fields!!");
             return;
         }

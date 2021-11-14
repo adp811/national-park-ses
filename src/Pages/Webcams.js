@@ -7,16 +7,20 @@ import { Heading, Spacer } from '@chakra-ui/react'
 
 const Webcams = () => {
 
+    //store the state of webcams array
     const [webcams, setWebcams] = React.useState([]);
 
+    //query all webcam data when the page first loads
     useEffect(() => { 
         getWebcams();
         
     }, []); 
 
+    //async function to query the list of all webcams and their information
     const getWebcams = async () => {
 
-        try {
+        try { //try to request webcam data from API
+
             const url = "https://developer.nps.gov/api/v1/webcams?limit=200&api_key=" + 
                 process.env.REACT_APP_PARK_API_KEY;
             
@@ -24,7 +28,8 @@ const Webcams = () => {
             setWebcams(res.data.data);
             console.log(webcams);
 
-        } catch (err) {
+        } catch (err) { //handle errors in query request
+
             console.error(err);
 
         }

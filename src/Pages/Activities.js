@@ -7,26 +7,31 @@ import { FaSearch } from 'react-icons/fa'
 
 const Activities = () => {
 
+    //store state of activites and the input form value
     const [activities, setActivities] = React.useState([]);
     const [formValue, setFormValue] = React.useState("");
 
+    //handle change to input form
     const handleFormChange = (event) => setFormValue(event.target.value);
 
+    //async function to query activities data
     const getActivities = async () => {
 
-        if (formValue === "") {
+        if (formValue === "") { //check for invalid input
+
             alert("please enter an activity to search!");
             return;
         }
 
-        try {
+        try { //try to query the activity data
+
             const url = "https://developer.nps.gov/api/v1/activities?q=" + formValue 
             + "&limit=40&api_key=" + process.env.REACT_APP_PARK_API_KEY;
             
             const res = await axios.get(url);
             setActivities(res.data.data);
 
-        } catch (err) {
+        } catch (err) { //handle error in query
             console.error(err);
 
         }

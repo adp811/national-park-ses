@@ -3,7 +3,6 @@ import Webcam from './Webcam'
 import { VStack, StackDivider} from '@chakra-ui/react'
 
 const WebcamList = ({ webcams }) => {
-
     return (
         <VStack  
             divider={<StackDivider />}
