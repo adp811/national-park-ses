@@ -20,7 +20,7 @@ const Home = () => {
                 
                 Hello!!! Welcome to a web app that gives you awesome information about national parks in the United States of America.
                 You can search for fun activites to do at certain national parks as well as get access to live photos from webcams that are in 
-                these national parks. How cool is that?! A blog page is currently in the works so stay tuned...
+                these national parks. How cool is that??!!
 
             </Box>
 
